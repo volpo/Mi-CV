@@ -43,3 +43,47 @@ body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-seri
 @media print {
   .layout { grid-template-columns: 260px 1fr; }
 }
+
+/* --- Pantalla: imitar ancho A4 centrado --- */
+.layout{
+  max-width: 210mm;
+  min-height: 297mm;   /* alto de referencia */
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* --- Impresión: A4 pulido --- */
+@media print{
+  html, body { height: auto; }
+  body{
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;  /* mantiene colores y fondos */
+  }
+
+  .layout{
+    width: 210mm;
+    min-height: auto;           /* evita forzar página extra */
+    grid-template-columns: 260px 1fr; /* ya lo tenías, lo dejamos aquí también */
+    box-shadow: none;
+  }
+
+  /* Evitar que estas cajas se corten entre páginas */
+  .habilidades-aside,
+  .section-resumen,
+  .section-experiencia,
+  .experiencia,
+  .section-educacion,
+  .section-formacion,
+  .section-proyectos{
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Si tu impresora ignora fondos, al menos hacé legibles los links */
+  .sidebar a { color: #ffffff; }
+}
+
+/* (Opcional) Ocultar URLs automáticas que agregan algunos navegadores al imprimir */
+@media print {
+  a[href]::after { content: ""; }
+}
