@@ -1,0 +1,45 @@
+/* ===== Base ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: #1f2937; background: #ffffff; line-height: 1.55; }
+
+/* ===== Layout ===== */
+.layout { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
+.sidebar { background: #0f3b63; color: #fff; padding: 24px 20px; }
+.content { padding: 32px 28px; }
+
+/* ===== Sidebar ===== */
+#fotoCV { display: flex; justify-content: center; margin-bottom: 16px; }
+#foto-perfil { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,.35); }
+.habilidades-aside { margin-top: 18px; }
+.habilidades-aside h3 { font-size: 14px; letter-spacing: .08em; margin-bottom: 8px; opacity: .95; }
+.habilidades-aside ul { list-style: none; display: grid; gap: 6px; }
+.habilidades-aside li { font-size: 14px; opacity: .95; }
+.habilidades-aside a { color: #fff; text-decoration: none; }
+.habilidades-aside a:hover { text-decoration: underline; }
+
+/* ===== Portada ===== */
+#portada h1 { font-size: 36px; font-weight: 800; letter-spacing: .02em; }
+#portada hr { margin: 6px 0 8px; height: 2px; border: 0; background: #e5e7eb; }
+#portada h4 { font-weight: 600; color: #374151; }
+
+/* ===== Secciones ===== */
+.section-resumen, .section-experiencia, .section-educacion, .section-formacion, .section-proyectos { margin-top: 22px; }
+.section-resumen p { margin-bottom: 6px; }
+.experiencia, .proyecto { margin-top: 16px; }
+.experiencia-titulo { display: flex; justify-content: space-between; align-items: baseline; }
+.experiencia-fecha { color: #6b7280; font-size: 14px; }
+.section-experiencia ul, .section-educacion ul, .section-formacion ul, .section-proyectos ul { margin: 8px 0 0 18px; }
+.section-experiencia li, .section-educacion li, .section-formacion li, .section-proyectos li { margin-bottom: 4px; }
+.proyecto h4 { color: #374151; font-weight: 600; margin-bottom: 8px; }
+
+/* ===== Responsive ===== */
+@media (max-width: 840px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { padding-bottom: 12px; }
+}
+
+/* ===== Print (opcional) ===== */
+@page { size: A4; margin: 14mm; }
+@media print {
+  .layout { grid-template-columns: 260px 1fr; }
+}
