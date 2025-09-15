@@ -67,7 +67,7 @@ body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-seri
     box-shadow: none;
   }
 
-  /* Evitar que estas cajas se corten entre páginas */
+  /* Evitar que se corten entre páginas */
   .habilidades-aside,
   .section-resumen,
   .section-experiencia,
@@ -79,7 +79,7 @@ body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-seri
     page-break-inside: avoid;
   }
 
-  /* Si tu impresora ignora fondos, al menos hacé legibles los links */
+  /* Si la impresora ignora fondos, al menos hace legibles los links */
   .sidebar a { color: #ffffff; }
 }
 
